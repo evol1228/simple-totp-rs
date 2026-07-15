@@ -19,11 +19,26 @@ This is the native Rust rewrite of [simple-totp](https://github.com/evol1228/sim
 ## Features
 
 - **Real-time code generation** — 6-digit TOTP codes, displayed as `123 456` and refreshed live
+- **Profiles** — Save named logins and reopen them with one click, or mark one as the default that loads on startup
 - **Network time sync** — Corrects for local clock drift by reading the `Date` header from a single HEAD request to Google, falling back to local time if offline
 - **One-click copy** — Click the code itself or press the button to copy it to your clipboard
 - **Visual countdown** — Shows seconds remaining and turns red when the code is about to expire
 - **Native and lightweight** — A single ~17 MB binary, no Electron, no runtime to install
 - **Tested against the RFCs** — `cargo test` checks the HOTP/TOTP output against the official RFC 4226 and RFC 6238 test vectors
+
+## Profiles
+
+The **☰ Profiles** button in the top-left corner opens a small manager window. Give a profile a name, paste its secret, and hit **Add profile**. Each saved profile has three controls:
+
+- **Open** — loads the secret into the main window immediately
+- **Open default** — marks it as the profile that loads automatically on startup (only one can be default; click again to unset)
+- **🗑** — deletes the profile
+
+<p align="center">
+  <img src="assets/screenshot-profiles.png" alt="Profiles window" width="700" />
+</p>
+
+Profiles are stored in `~/.local/share/simple-totp/profiles.json` with owner-only file permissions. Note that secrets are stored in plain text — treat that file like a password file.
 
 ## Tech Stack
 
