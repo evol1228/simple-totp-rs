@@ -1,0 +1,11 @@
+[Desktop Entry]
+Type=Application
+Name=Simple TOTP
+GenericName=Two-Factor Authenticator
+Comment=Generate 2FA codes from a secret key
+Exec=simple-totp
+Icon=simple-totp
+Terminal=false
+Categories=Utility;Security;
+Keywords=2fa;totp;authenticator;otp;code;
+StartupWMClass=simple-totp

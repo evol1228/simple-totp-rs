@@ -1,0 +1,19 @@
+[package]
+name = "simple-totp"
+version = "1.0.0"
+edition = "2021"
+description = "A standalone desktop 2FA code generator — native Rust rewrite of evol1228/simple-totp"
+license = "MIT"
+
+[dependencies]
+eframe = "0.35"
+hmac = "0.12"
+sha1 = "0.10"
+data-encoding = "2"
+ureq = "3"
+httpdate = "1"
+
+[profile.release]
+strip = true
+lto = true
+codegen-units = 1
