@@ -14,6 +14,8 @@ ureq = "3"
 httpdate = "1"
 serde = { version = "1", features = ["derive"] }
 serde_json = "1"
+env_logger = "0.11.11"
+arboard = { version = "3.6", default-features = false, features = ["wayland-data-control"] }
 
 [profile.release]
 strip = true

@@ -412,6 +412,7 @@ impl eframe::App for App {
 }
 
 fn main() -> eframe::Result {
+    env_logger::init();
     let options = eframe::NativeOptions {
         viewport: egui::ViewportBuilder::default()
             .with_inner_size([340.0, 330.0])
